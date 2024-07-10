@@ -9,11 +9,11 @@ const app = express();
 const port = process.env.PORT || 3002;
 
 // Twilio credentials
-const accountSid = "AC685ee4ca81febfb3df4974b3160a85f8";
-const authToken = "c30ab9f2331c58a922e38ea1d91bc997";
+const accountSid = "";
+const authToken = "";
 
-const apiKeySid = "SKf257452d738661f913fbfb75e932a2ac"; // Replace with your API Key SID
-const apiKeySecret = "Ig24oWlpQykIsFWd64KjVaP5c35BXw4d";
+const apiKeySid = ""; // Replace with your API Key SID
+const apiKeySecret = "";
 
 const AccessToken = require("twilio").jwt.AccessToken;
 const VoiceGrant = AccessToken.VoiceGrant;
