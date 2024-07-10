@@ -9,11 +9,10 @@ const app = express();
 const port = process.env.PORT || 3002;
 
 // Twilio credentials
-const accountSid = "";
-const authToken = "";
-
-const apiKeySid = ""; // Replace with your API Key SID
-const apiKeySecret = "";
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const apiKeySid = process.env.TWILIO_API_KEY_SID;
+const apiKeySecret = process.env.TWILIO_API_KEY_SECRET;
 
 const AccessToken = require("twilio").jwt.AccessToken;
 const VoiceGrant = AccessToken.VoiceGrant;
@@ -36,7 +35,7 @@ app.get("/api/token", (req, res) => {
 
     // Grant access to Twilio Voice capabilities
     const voiceGrant = new VoiceGrant({
-      outgoingApplicationSid: "AP08ed51304b77729c260de04e7e764e19", // Replace with your Twilio Voice Application SID
+      outgoingApplicationSid: process.env.TWILIO_API_TWIML_SID, // Replace with your Twilio Voice Application SID
       incomingAllow: true,
     });
 
